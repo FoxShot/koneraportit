@@ -1,31 +1,4 @@
-\documentclass[a4paper, 12pt, twoside]{artikel3}
-\usepackage[utf8]{inputenc}
-\usepackage[finnish]{babel}
-\usepackage{geometry}
-\usepackage[dvipsnames, table]{xcolor}
-\usepackage{float}
-\usepackage{mdframed}
-
-\geometry{
-a4paper,
-left=35mm,
-right=25mm,
-top=10mm,
-bottom=20mm
-}
-
-\floatstyle{plain}
-\newfloat{program}{H}{lop}
-\floatname{program}{Program}
-
-%\def\[{\begin{program}\begin{mdframed}[backgroundcolor=BurntOrange!30]\begin{Verbatim}}
-%\def\]{\end{Verbatim}\end{mdframed}\end{program}}
-
-\renewcommand{\[}{\begin{program}\begin{mdframed}[backgroundcolor=BurntOrange!30]\verb}
-\renewcommand{\]}{\end{mdframed}\end{program}}
-
-\usepackage{moreverb}
-\usepackage{fancyvrb}
+\documentclass[main.tex]{subfiles}
 
 \begin{document}
 \thispagestyle{empty}
@@ -35,7 +8,7 @@ Käyttis: Lubuntu 15.10
 \end{tabular}
 \hfill 27.3.2016
 
-{\scshape\Large{Python ja gdata-paketti}
+{\scshape\Large{Python ja gdata-paketti}}
 
 Ongelmia oli löytää moduuli \texttt{tlslite.utils} kun asennettiin GitHubista \texttt{gdata-python-client-master}. Lataamalla paketti \texttt{gdata-2.0.18} ja asentamalla saatiin oikeat tiedostot. Kuitenkin nämä tuli siirtää polusta oikeaan
 

@@ -1,0 +1,48 @@
+\documentclass[a4paper, 12pt, twoside]{artikel3}
+\usepackage[utf8]{inputenc}
+\usepackage[finnish]{babel}
+\usepackage{geometry}
+\usepackage[dvipsnames, table]{xcolor}
+
+\geometry{
+a4paper,
+left=35mm,
+right=25mm,
+top=10mm,
+bottom=20mm
+}
+
+\def\[{\quad\begin{tabular}{l}\rowcolor{BurntOrange!30}\verb}
+
+\def\]{\end{tabular}}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: extendedshadow\\
+Käyttis: ubuntu 14.04 LTS
+\end{tabular}
+\hfill 2.11.2015
+
+{\scshape\Large{Nemo file manager}}
+
+Lisättiin repo ja asennettiin nemo
+
+\[
+sudo apt-add-reposity ppa:noobslab/mint
+\]
+
+\[
+sudo apt-get update
+\]
+
+\[
+sudo apt-get install nemo
+\]
+
+Määriteltiin oletustiedostojenkäsittelijäksi Nemo
+
+\[
+xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+\]
+\end{document}

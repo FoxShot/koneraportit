@@ -1,0 +1,35 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\lstset{language=sh}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: HP TC4400\\
+Käyttis: Lubuntu 15.04
+\end{tabular}
+\hfill 20.11.2015
+
+{\scshape\Large{OpenRa asennus}}
+
+Asennettiin OpenRa .deb-tiedostosta. Käynnistys ei onnistu. Logit paljastavat vian olevan OpenGL:ssä, jonka tulisi olla 2.0 ja 1.4 löydettiin. Koitettiin päivittää paketit.
+
+\begin{lstlisting}
+sudo add-apt-repository ppa:oibaf/graphics-drivers
+sudo apt-get update
+sudo apt-get upgrade
+\end{lstlisting}
+
+Osa päivitystä tarvitsevista paketeista jäi päivittämättä, joten pakotettiin päivitys.
+
+\begin{lstlisting}
+sudo apt-get install libegl1-mesa libegl1-mesa-drivers xserver-xorg-video-intel libgl1-mesa-dri libglapi-mesa 
+\end{lstlisting}
+
+Asennettiin \texttt{mesa-utils} ja tarkastettiin versio.
+
+\begin{lstlisting}
+glxinfo | grep "OpenGL version"
+\end{lstlisting}
+
+Nyt version on 2.1 mikä kelpaa.
+\end{document}

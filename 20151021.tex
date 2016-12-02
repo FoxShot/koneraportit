@@ -1,0 +1,35 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: HP TC4400\\
+Käyttis: Lubuntu 15.04
+\end{tabular}
+\hfill 21.10.2015
+
+{\scshape\Large{OpenXCom-pelin asennus}}
+
+
+Asennettiin \texttt{openxcom} versio 1.0 repositorystä:
+
+\begin{lstlisting}
+sudo add-apt-repository ppa:knapsu/openxcom
+sudo apt-get update
+sudo apt-get install openxcom
+\end{lstlisting}
+
+ Siirrettiin Steamin (Windows) kansiosta \texttt{../Steam/steamapps/common/xcom ufo defense/XCOM} seuraavat kansiot OpenXCom:n \texttt{data}-kansioon:
+\begin{itemize}
+\item GEODATA
+\item GEOGRAPH
+\item MAPS
+\item ROUTES
+\item SOUND
+\item TERRAIN
+\item UFOGRAPH
+\item UFOINTRO
+\item UNITS
+\end{itemize}
+\texttt{data}-kansio löytyi polusta \texttt{/usr/local/share/openxcom}.
+\end{document}

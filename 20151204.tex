@@ -1,0 +1,38 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: HP TC4400\\
+Käyttis: Lubuntu 15.04
+\end{tabular}
+\hfill 4.12.2015
+
+{\scshape\Large{Netflix ja Silverlight}}
+
+Asennettiin pipelight reposta
+
+\begin{lstlisting}
+sudo add-apt-repository ppa:pipelight/stable
+sudo apt-get update
+sudo apt-get -y install pipelight-multi samba-dev
+\end{lstlisting}
+
+Enabloitiin silverlight-liitännäinen
+
+\begin{lstlisting}
+sudo pipelight-plugin --enable silverlight
+\end{lstlisting}
+
+Käynnistettiin Firefox ja \texttt{wine} asensi silverlighting. Asennettiin \texttt{UAControl}-liitännäinen Firefoxiin \texttt{addons.mozilla.org} ja huijattiin \texttt{www.netflix.com} luulemaan konetta Windows-koneeksi lisäämällä \texttt{UAControl}:iin sivun asetus
+
+\begin{lstlisting}
+Mozilla/5.0 (Windows NT 6.1; rv:29.0) Gecko/20131011 Firefox/29.0
+\end{lstlisting}
+
+Tämän jälkeen luotiin vielä Firefox-liitäineinen \texttt{pipelight}:lle
+
+\begin{lstlisting}
+sudo pipelight-plugin --create-mozilla-plugins
+\end{lstlisting}
+\end{document}

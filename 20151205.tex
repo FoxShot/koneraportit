@@ -1,0 +1,53 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: HP TC4400\\
+Käyttis: Lubuntu 15.04
+\end{tabular}
+\hfill 5.12.2015
+
+{\scshape\Large{Steam ja OpenGL ongelmat}}
+
+Yritettiin käynnistää \texttt{steam}
+
+\begin{lstlisting}
+steam
+\end{lstlisting}
+
+Mutta saatiin virheitä
+
+\begin{lstlisting}
+libGL error: unable to load driver: i915\_dri.so
+libGL error: driver pointer missing
+libGL error: failed to load driver: i915
+libGL error: unable to load driver: swrast\_dri.so
+libGL error: failed to load driver: swrast
+\end{lstlisting}
+
+Koitettiin päivittää ajurit
+
+\begin{lstlisting}
+sudo apt-get upgrade
+\end{lstlisting}
+
+Jotain asennettiin mutta tämä ei auttanut ongelmaan. Poistettiin libdrm2
+
+\begin{lstlisting}
+sudo apt-get remove libdrm2
+\end{lstlisting}
+
+Tämä poisti paljon muutakin mennessään, kuten \texttt{steam}:n. Uudelleen asentamisen jälkeen ajettiin
+
+\begin{lstlisting}
+cd $HOME/.steam/steam/ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu
+mv libstdc++.so.6 libstdc++.so.6.bak
+\end{lstlisting}
+
+Mikä estää käyttämästä asennuksen mukana tulleita vanhoja paketteja. Tämän jälkeen \texttt{steam} alkoi päivittää, mutta päivityksen jälkeen jälleen sama virheilmoitus. Ilmeisesti päivitetylle versiolle toimii
+
+\begin{lstlisting}
+find $HOME/.steam/root/ubuntu12_32/steam-runtime/*/usr/lib/ -name "libstdc++.so.6" -exec mv "{}" "{}.bak" \; -print
+\end{lstlisting}
+\end{document}

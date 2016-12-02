@@ -1,0 +1,36 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: HP TC4400\\
+Käyttis: Lubuntu 15.04
+\end{tabular}
+\hfill 26.10.2015
+
+{\scshape\Large{Näytönkierto}}
+
+Ohjelmalla \texttt{xrandr} voidaa kääntää näyttöä antamalla tarkennin \texttt{-o} esim.
+
+\begin{lstlisting}
+xrandr -o right
+\end{lstlisting}
+
+kääntää näytön oikealle. Vastaavasti \texttt{left} vasemmalle, \texttt{inverted} ylösalaisin ja \texttt{normal} palauttaa.
+
+\begin{lstlisting}
+xinput list
+\end{lstlisting}
+
+näyttää listauksen syötelaitteista. Listassa laitte "\texttt{Serial Wacom Tablet stylus}" on näyttökynä, jonka toiminta tulee myös kääntää
+
+\begin{lstlisting}
+xsetwacom set "Serial Wacom Tablet stylus" rotate ccw
+\end{lstlisting}
+
+esim. kääntää orientaation oikealle (ccw 'counter clock wise'), \texttt{cw} kääntää vasemmalle, \texttt{half} ylösalaisin ja \texttt{none} palauttaa.
+
+\texttt{/sys/devices/platform/hp-wmi/tablet} antaa 0 kun läppäri-mode ja 1 kun tablet-mode. Näistä koottiin skripti, joka valvoo koska moodi vaihtuu ja pyöräyttää sen mukaan näytön ympäri.
+
+%\verbatimtabinput{./scripts/20151026.sh}
+\end{document}

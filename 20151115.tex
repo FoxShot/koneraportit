@@ -1,0 +1,31 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: extendedshadow\\
+Käyttis: ubuntu 14.04 LTS
+\end{tabular}
+\hfill 15.11.2015
+
+{\scshape\Large{Texmaker 4.1}}
+Asennettiin texlive
+
+\begin{lstlisting}
+sudo apt-get install texlive
+\end{lstlisting}
+
+Ei saatu haluttua tulosta, joten asennettiin koko paketti
+
+\begin{lstlisting}
+sudo apt-get install texlive-full
+\end{lstlisting}
+
+Huomattiin, että tarkoitus oli tehdä asennus texmakerille joten
+
+\begin{lstlisting}
+sudo apt-get install texmaker
+\end{lstlisting}
+
+Texmakerissa on nyt asetuksissa nappi, jolla ulos tulevat tiedostot siirretään alikansioon "build". Kuitenkin myös pdf-tiedostot menevät tähän kansioon, joten tämä vastaa hieman \texttt{-output-directory=} määritettä pdflatexiin.
+\end{document}

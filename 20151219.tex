@@ -1,0 +1,30 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: HP TC4400\\
+Käyttis: Lubuntu 15.04
+\end{tabular}
+\hfill 20.11.2015
+
+{\scshape\Large{Teamviewer ja Steam ongelmat}}
+
+Teamviewer
+
+\begin{lstlisting}
+sudo cp /usr/bin/wine /usr/bin/wineserver /usr/bin/wine-preloader /opt/teamviewer9/tv_bin/wine/bin/
+sudo cp /usr/lib/i386-linux-gnu/libwine.so.1.0 /opt/teamviewer9/tv_bin/wine/lib/
+sudo cp -R /usr/lib/i386-linux-gnu/wine/* /opt/teamviewer9/tv_bin/wine/lib/wine/
+teamviewer --update-profile
+teamviewer --winecfg
+\end{lstlisting}
+
+\begin{lstlisting}
+sudo dpkg --configure -a
+\end{lstlisting}
+
+\begin{lstlisting}
+nice -n 19 wine "C:\Program Files\Steam\Steam.exe" -no-dwrite
+\end{lstlisting}
+\end{document}

@@ -1,0 +1,30 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: HP TC4400\\
+Käyttis: Lubuntu 15.04 LTS
+\end{tabular}
+\hfill 7.11.2015
+
+{\scshape\Large{Nemo file manager}}
+
+Lisättiin repo ja asennettiin nemo
+
+\begin{lstlisting}
+sudo apt-add-reposity ppa:noobslab/mint
+sudo apt-get update
+sudo apt-get install nemo
+\end{lstlisting}
+
+Määriteltiin oletustiedostojenkäsittelijäksi Nemo lxsessiolle tiedostoon \\
+\texttt{$\sim$/.config/lxsession/Lubuntu/desktop.conf} \\
+rivillä 
+
+\begin{lstlisting}
+file_manager/command=nemo
+\end{lstlisting}
+
+Pikanäppäimien asetukset löytyvät tiedostosta \texttt{$\sim$/.config/openbox/lubuntu-rc.xml}
+\end{document}

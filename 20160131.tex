@@ -1,0 +1,20 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: HP TC4400\\
+Käyttis: Lubuntu 15.04
+\end{tabular}
+\hfill 31.1.2016
+
+{\scshape\Large{Oikeinkirjoituksen tarkistus}}
+
+Käytettään \texttt{aspell} ohjelmaa tarkistamaan Latex-dokumentteja. Valitsimella \texttt{-t} ilmoitetaan, että kyse on tex-dokumentista. Suomen sanakirja valitaan \texttt{--master=fi}. Koska kyse on vanhasta tiedostosta tulee vielä ilmoittaa kirjaisinkoodaus \texttt{--encoding=ISO-8859-1}. Ilmoitetaan vielä haluttu dokumentti valitsimella \texttt{-c} ja kokonaisuudessaan komento on
+
+\begin{lstlisting}
+  aspell -t --encoding=ISO-8859-1 --master=fi -c <tex-tiedosto>
+  asf
+\end{lstlisting}
+
+\end{document}

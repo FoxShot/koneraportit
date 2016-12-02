@@ -1,0 +1,43 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: Lenovo X61 tablet\\
+Käyttis: Lubuntu 15.10
+\end{tabular}
+\hfill 26.3.2016
+
+{\scshape\Large{\texttt{youtube-dl} ja vakioasetukset}}
+
+Luotiin tiedosto tunnusten ja salasanojen tallentamista varten ja luotiin sille käyttöoikeudet
+
+\begin{lstlisting}
+gedit ~/.netrc
+chmod a-rwx,u+rw ~/.netrc
+\end{lstlisting}
+
+Tunnukset ja salasanat kirjoitettiin tiedostoon muodossa
+
+\begin{lstlisting}
+machine <extractor> login <login> password <password>
+\end{lstlisting}
+
+missä \texttt{extractor} on esimerkiksi \texttt{youtube}. Listauksen mahdollisista extractoreista saa komennolla
+
+\begin{lstlisting}
+youtube-dl --list-extractors
+\end{lstlisting}
+
+Lisäksi luotiin konfiguraatiotiedosto \texttt{youtube-dl}:ää varten.
+
+\begin{lstlisting}
+gedit ~/configuration/youtube-dl/config
+\end{lstlisting}
+
+Tiedostoon voidaa laittaa automaattisesti käytettävät valitsimet. Jotta ohjelma lataisi tunnukset ja salasanat tiedostosta, lisättiin konfiguraatiotiedostoon rivi
+
+\begin{lstlisting}
+--netrc
+\end{lstlisting}
+\end{document}

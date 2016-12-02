@@ -1,0 +1,63 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: HP TC4400\\
+Käyttis: Lubuntu 15.10
+\end{tabular}
+\hfill 6.12.2015
+
+{\scshape\Large{Lubuntu ongelmat}}
+
+\texttt{libdrm2}:n poistaminen aiheutti useiden tärkeiden pakettien poiston. Kone ei enään käynnistynyt oikein. Yritettiin korjata päivittämällä 15.10. Bootatessa virhe \texttt{missing configuration file. keyword: path}. Tabulaattorilla selvisi mahdolliset komennot ja kirjoittamalla 
+
+\begin{lstlisting}
+live
+\end{lstlisting}
+
+saatiin live-session käynnistettyä, mutta päivitys ei toiminut ja ainut mikä toimi oli puhdas asennus. Ensin tuli ottaa dekryptatut käyttäjätiedostot talteen. Live-sessiossa mountattiin kovalevy ja ajettiin
+
+\begin{lstlisting}
+sudo ecryptfs-recover-private
+\end{lstlisting}
+
+Avattiin \texttt{pcmanfm} järjestelmän valvojana, jotta tiedostoihin päästiin käsiksi.
+
+\begin{lstlisting}
+gksu pcmanfm
+\end{lstlisting}
+
+Lubuntu asennuksen jälkeen ei boottia. Vain vilkkuva kursori mustalla ruudulla. Piti asentaa \texttt{grub} erilleen tälle asemalle.
+
+\begin{lstlisting}
+sudo mmount /dev/sdb1 /mnt
+sudo grub-install --root-directory=/mnt /dev/sdb
+\end{lstlisting}
+
+Kolmannen osapuolen ajureita ei asennettu, joten firefox flash plugin asennettiin
+
+\begin{lstlisting}
+sudo apt-get install flashplugin-installer 
+\end{lstlisting}
+
+Texmaker ja suomenkielen paketti
+
+\begin{lstlisting}
+sudo apt-get install texmaker texlive-lang-european
+\end{lstlisting}
+
+Siirrettiin tallennetut tiedostot ja koitettiin asentaa \texttt{steam}, mutta virheilmoitus \texttt{failed to load steamui.so}, joten nimettiin uudelleen kansio ja ajettiin asennus uudelleen
+
+\begin{lstlisting}
+mv .local/share/Steam{,.old} 
+\end{lstlisting}
+
+Kopioitiin vanhat pelitiedostot uuteen asennukseen
+
+\begin{lstlisting}
+cp .local/share/Steam{.old,}/common 
+\end{lstlisting}
+
+Peli ei näkynyt käynnistäessä asennettuna, mutta asennuksen jälkeen säilytti kuitenkin tallennukset. Tämä saattoi kuitenkin johtua siitä, että tallennukset olivat pilvessä. Myöskin \texttt{.config}-polun kopiointi uuteen asennukseen säilytti \texttt{textmaker}:n asetukset.
+\end{document}

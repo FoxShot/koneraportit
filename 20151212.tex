@@ -1,0 +1,56 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: extendedshadow\\
+Käyttis: Ubuntu 14.04 LTS
+\end{tabular}
+\hfill 12.12.2015
+
+{\scshape\Large{Videoeditointi, työpöytäjumi ja gif-konversio}}
+
+Asennettiin \texttt{openshot}
+
+\begin{lstlisting}
+sudo apt-get install openshot
+\end{lstlisting}
+
+Käytettiin ohjelmaa videon leikkaamiseen ja pätkästä luotiin png-kuvasarja. Työpöytä päätti kuitenkin jumittaa ja se piti käynnistää uudelleen kirjautumalla ulos painaen \texttt{ctrl+alt+F1}. Kirjauduttiin komentorivillä sisään ja käynnistettiin työpyötä uudelleen
+
+\begin{lstlisting}
+sudo service lightdm restart
+\end{lstlisting}
+
+Kuvakansiossa ajettiin \texttt{convert}
+
+\begin{lstlisting}
+convert -delay 5 -loop 0 *.png animation.gif
+\end{lstlisting}
+
+Kuvien tulee olla järjestyksessä, siis loppunumeron muotoa 01 tai 001 riippuen kuvien määrästä.
+
+{\Large{Edit:}}
+
+Video saadaan helpommin convertoitua gif-muotoon luomalla ensin sarja jpg-tiedostoja seuraavasti
+
+\begin{lstlisting}
+mkdir frames
+ffmpeg -i <video> -r 5 'frames/frame-%03d.jpg'
+\end{lstlisting}
+
+missä 5 on fps eli kääntäen 20 ms delay convertointia varten. \texttt{ffmpeg} asenetaan repositorystä
+
+\begin{lstlisting}
+sudo add-apt-repository ppa:mc3man/trusty-media
+sudo apt-get update
+sudo apt-get install ffmpeg
+\end{lstlisting}
+
+gif muodostuu komennolla
+
+\begin{lstlisting}
+convert -delay 20 -loop 0 ./frames/*.jpg animation.gif
+\end{lstlisting}
+
+\end{document}

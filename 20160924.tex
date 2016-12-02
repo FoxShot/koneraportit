@@ -1,0 +1,23 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: Lenovo T\\
+Käyttis: Lubuntu 15.10
+\end{tabular}
+\hfill 24.9.2016
+
+{\scshape\Large{Aloituksen korjaus ja login-poisto}}
+
+Koneen käynnistyessä piti nopeasti kirjoittaa key ring default password tai muutoin verkkoyhteys ja backend yhdistys ei toiminut ja frontend jumittui. Poistettiin ensin pääkäyttäjän salasanan kysely "Users and groups" ohjelmasta ja sen jälkeen lisättiin "Privilages" välilehdelle rasti "Connect to wireless and ethernet networks" -ruutuun "Advanced" -kohdasta.
+
+Vielä tuli poistaa keyring salasana. Asennettiin \texttt{seahorse} 
+
+\begin{lstlisting}
+  sudo apt-get install seahorse
+\end{lstlisting}
+
+Avattiin ohjelma ja vaihdettiin default keyring salasana tyhjäksi.
+
+\end{document}

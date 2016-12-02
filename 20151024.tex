@@ -1,0 +1,38 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: HP TC4400\\
+Käyttis: Lubuntu 15.04
+\end{tabular}
+\hfill 24.10.2015
+
+{\scshape\Large{Akun 10\% varaus varoitus}}
+
+Lista virtalaitteista saadaan komennolla: 
+
+\begin{lstlisting}
+upower -e
+\end{lstlisting}
+
+Akun laite oli \texttt{/org/freedesktop/UPower/devices/battery\_C1B4}. Siispä tiedot akun tilasta saadaan komennolla:
+
+\begin{lstlisting}
+upower -i /org/freedesktop/UPower/devices/battery\_C1B4
+\end{lstlisting}
+
+Lyhyempi tapa on käyttää \texttt{grep}-ohjelmaa laitteen etsimiseen
+
+\begin{lstlisting}
+upower -i $(upower -e|grep battery)
+\end{lstlisting}
+
+jolloin laitelistasta etsitään merkkijonoa \texttt{battery}. Listasta voidaan edelleen \texttt{grep}:ta jäljellä oleva akun prosentti ja \texttt{notify-send}-ohjelmalla ilmoittaa tämä ruudulla
+
+\begin{lstlisting}
+notify-send $(upower -i $(upower -e|grep battery)|grep percentage)
+\end{lstlisting}
+
+Huomiolähetyksen taustassa oli poikittaisia viivoja, joka korjattiin uudelleen nimeämällä tiedosto \texttt{/usr/share/themes/Lubuntu-default/gtk-2.0/images/panel-bg.png}. Tausta on tällöin puhdas tumma.
+\end{document}

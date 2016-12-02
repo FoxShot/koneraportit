@@ -1,0 +1,43 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: Lenovo X61 tablet\\
+Käyttis: Lubuntu 15.10
+\end{tabular}
+\hfill 26.3.2016
+
+{\scshape\Large{\texttt{gzdoom}, Brutal doom ja OpenGL}}
+
+Asennettiin gzdoom reposta
+
+\begin{lstlisting}
+sudo add-apt-repository 'deb http://debian.drdteam.org/ stable multiverse'
+sudo apt-get update
+sudo apt-get install gzdoom
+\end{lstlisting}
+
+Kuitenkin käynnistettäessä vaadittiin OpenGL versio 3.0+. Yritettiin päivittää OpenGL
+
+\begin{lstlisting}
+sudo apt-get-repository ppa:oibaf/graphics-drivers
+sudo apt-get update
+sudo apt-get upgrade
+\end{lstlisting}
+
+Tämä ei päivittänyt ja OpenGL on edelleen 2.1. Vain paketit linux-generic linux-headers-generic linux-image-generic pidettiin vanhoina. Yritettiin kuitenkin vielä
+
+\begin{lstlisting}
+sudo apt-get install libegl1-mesa libegl1-mesa-drivers xserver-xorg-video-intel libgl1-mesa-dri libglapi-mesa
+\end{lstlisting}
+
+Ei auttanut. Onneksi oli kuitenkin gzdoom1, joka toimii OpenGL 2.0+ versiolla. Asetettiin freedoom.wad, brutalv20b.pk3 ~/.config/gzdoom/ polkuun ja kirjoitettiin gzdoom.ini tiedostoon rivit:
+
+\begin{lstlisting}
+[doom.Autoload]
+Path=/home/vulpiculae/.config/gzdoom/brutalv20b.pk3
+Path=/home/vulpiculae/.config/gzdoom/ExtraTextures.wad
+\end{lstlisting}
+
+\end{document}

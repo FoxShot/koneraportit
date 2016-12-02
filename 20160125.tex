@@ -1,0 +1,51 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: extendedshadow\\
+Käyttis: ubuntu 14.04 LTS
+\end{tabular}
+\hfill 25.1.2016
+
+{\scshape\Large{Tiedostojen jakaminen (samba) ja fstab}}
+
+Asennettiin \texttt{samba}
+
+\begin{lstlisting}
+sudo apt-get install samba
+\end{lstlisting}
+
+Luotiin jaettaville tiedostoille kansiot, luotiin oikeudet käyttöön ja \texttt{samba}:an
+
+\begin{lstlisting}
+sudo mkdir /home/<jaettava>
+sudo chown <kayttaja> /home/<jaettava>
+sudo mount /dev/<partitio> /home/<jaettava>
+sudo gedit /etc/samba/smb.conf
+\end{lstlisting}
+
+conf-tiedostoon lisättiin loppuun rivit
+
+\begin{lstlisting}
+[<jaettava>]
+path = /home/<jaettava>
+valid users = <kayttaja>
+read only = no
+\end{lstlisting}
+
+Käynnistettiin \texttt{samba}-palvelu uudelleen ja tarkistettiin toimivuus
+
+\begin{lstlisting}
+sudo service smbd restart
+testparm
+\end{lstlisting}
+
+Tunnistettiin partitioiden UUID:t ja lisättiin määritykset \texttt{fstab}:iin
+
+\begin{lstlisting}
+sudo blkid
+sudo gedit /etc/fstab
+\end{lstlisting}
+
+\end{document}

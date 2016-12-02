@@ -1,0 +1,21 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: HP TC4400\\
+Käyttis: Lubuntu 15.04
+\end{tabular}
+\hfill 30.1.2016
+
+{\scshape\Large{GIF-tiedostoja toistava kuvaohjelma}}
+ 
+Lubuntun oletusohjelma \texttt{GPicView} ei toistanut kunnolla GIF-tiedostoja, joten koitettiin toisia ohjelmia. \texttt{qiv} eikä \texttt{xzgv} toiminut yhtään paremmin. \texttt{gifsicle}-paketin \texttt{gifview -a} toimi, mutta oli hankala käyttää. Asennettiin \texttt{eog} mikä on Ubuntun oletusohjelma. Tämä toimii.
+
+\begin{lstlisting}
+sudo gedit /usr/share/applications/defaults.list
+\end{lstlisting}
+
+sisältää oletusohjelmat tiedostomuodoille.
+
+\end{document}

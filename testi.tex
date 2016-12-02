@@ -1,0 +1,94 @@
+\documentclass[a4paper, 12pt, twoside]{artikel3}
+\usepackage[utf8]{inputenc}
+\usepackage[finnish]{babel}
+\usepackage{geometry}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage{verbatim}% http://ctan.org/pkg/verbatim
+\usepackage{mdframed}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{tcolorbox,fancyvrb,xcolor,tikz}
+
+\lstset{% general command to set parameter(s)
+basicstyle=\small,          % print whole listing small
+keywordstyle=\color{black}\bfseries\underbar,
+backgroundcolor=\color{BurntOrange!30},
+% underlined bold black keywords
+identifierstyle=,           % nothing happens
+commentstyle=\color{white}, % white comments
+stringstyle=\ttfamily,      % typewriter type for strings
+showstringspaces=false}     % no special string space
+
+\tcbuselibrary{skins,breakable}
+\newenvironment{BGVerbatim}
+ {\VerbatimEnvironment
+  \begin{tcolorbox}[
+    breakable,
+    colback=yellow,
+    spartan
+  ]%
+  \Verbatim}
+ {\endVerbatim\end{tcolorbox}}
+
+\DefineVerbatimEnvironment{abc}{Verbatim}{%
+  gobble=2,
+  numbers=left,
+  numbersep=2mm,
+  frame=lines,
+  framerule=0.8mm,
+  colback=BurntOrange!30,
+}
+
+\geometry{
+a4paper,
+left=35mm,
+right=25mm,
+top=10mm,
+bottom=20mm
+}
+
+\newmdenv[%
+	innermargin=10pt,%
+	outermargin=20pt,%
+	backgroundcolor=BurntOrange!30,%
+	linewidth=0,%
+	skipabove=5pt,%
+	skipbelow=0pt%
+]{laatikko}
+
+\floatstyle{plain}
+\newfloat{program}{H}{lop}
+\floatname{program}{Program}
+
+\newenvironment{myverbatim}%
+  {\endgraf\Verbatim}%
+  {\endVerbatim}
+  
+\def\[{\lstlisting}
+\def\]{\endlstlisting}
+
+%\newenvironment{koodi}{\begin{laatikko}\\\begin{myverbatim}}{\end{myverbatim}\\\end{laatikko}}
+
+\begin{document}
+\lstset{language=sh}
+Some text before.
+%\begin{laatikko}
+\begin{myverbatim}
+test
+test
+\end{myverbatim}
+%\end{laatikko}
+Some text after.
+\begin{lstlisting}
+sadf
+asdf
+\end{lstlisting}
+
+%\[
+sdaffa
+asdfsf
+\]
+
+sdaf
+\end{document}

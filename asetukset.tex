@@ -1,0 +1,30 @@
+\usepackage[utf8]{inputenc}
+\usepackage[finnish]{babel}
+\usepackage{geometry}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage{listings}
+
+\geometry{
+a4paper,
+left=35mm,
+right=25mm,
+top=10mm,
+bottom=20mm
+}
+
+\lstset{% general command to set parameter(s)
+basicstyle=\small,          % print whole listing small
+keywordstyle=\color{black}\bfseries\underbar,
+backgroundcolor=\color{BurntOrange!30},
+% underlined bold black keywords
+identifierstyle=,           % nothing happens
+commentstyle=\color{white}, % white comments
+stringstyle=\ttfamily,      % typewriter type for strings
+language=sh,
+breaklines=true,
+aboveskip=5pt,
+belowskip=0pt,
+xleftmargin=20pt,
+framexleftmargin=20pt,
+keepspaces=false,
+showstringspaces=false}     % no special string space

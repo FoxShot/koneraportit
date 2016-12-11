@@ -48,4 +48,15 @@ sudo blkid
 sudo gedit /etc/fstab
 \end{lstlisting}
 
+Edit:
+
+Haluttiin yhdistää mountattu partitio suoraan käyttäjän Music-kansioon. Aluksi vain korvattiin mount-polku osoittamaan ko. kansioon, mutta tämä ei toimi hyvin: ohjelmat voivat tehdä omia säätöjään levyn arkistoon, partitio näkyy \texttt{nemo}:n device-listassa.
+
+Siispä suoritettiin bindaus Music-kansioon lisäämällä rivit \texttt{fstab}:iin
+
+\begin{lstlisting}
+UUID=<UUID>	/home/music	reiserfs	defaults	0	0
+/home/music	/home/vulpes/Music	none	bind
+\end{lstlisting}
+
 \end{document}

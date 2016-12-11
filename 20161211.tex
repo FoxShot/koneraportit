@@ -1,0 +1,28 @@
+\documentclass[main.tex]{subfiles}
+
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: Lenovo T\\
+Käyttis: Lubuntu 15.10
+\end{tabular}
+\hfill 25.9.2016
+
+\section{GTK-Youtube-viewer}
+
+Virheilmoitus pääsykiellosta kansioon "/.cache". Tarkistettiin ~/.config/youtube-viewer asetukset cache-polulle ja muutettiin omistajaa cache-polkuun
+
+\begin{lstlisting}
+  sudo chown -R vulpiculae ~/.cache/
+\end{lstlisting}
+
+Asetettiin vielä configuraatiotiedostoon seuraavat rivimuutokset
+
+\begin{lstlisting}
+  fullscreen                    => 1,
+  get_captions                  => 0,
+  resolution                    => 480,
+\end{lstlisting}
+
+\end{document}

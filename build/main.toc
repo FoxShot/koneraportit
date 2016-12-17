@@ -1,5 +1,24 @@
 \select@language {finnish}
-\contentsline {section}{\bfseries \texttt {gzdoom}, Brutal doom ja OpenGL}{21}{section*.2}
-\contentsline {section}{\bfseries Aloituksen korjaus ja login-poisto}{22}{section*.3}
-\contentsline {section}{\bfseries GTK-Youtube-viewer}{23}{section*.4}
-\contentsline {section}{\bfseries GTK-Youtube-viewer}{24}{section*.5}
+\contentsline {section}{\bfseries OpenXCom-pelin asennus}{2}{section*.2}
+\contentsline {section}{\bfseries Akun 10\% varaus varoitus}{3}{section*.3}
+\contentsline {section}{\bfseries N\IeC {\"a}yt\IeC {\"o}nkierto}{4}{section*.4}
+\contentsline {section}{\bfseries Nemo file manager}{5}{section*.5}
+\contentsline {section}{\bfseries Nemo file manager}{6}{section*.6}
+\contentsline {section}{\bfseries Latexmk}{7}{section*.7}
+\contentsline {section}{\bfseries Texmaker 4.1}{8}{section*.8}
+\contentsline {section}{\bfseries OpenRa asennus}{9}{section*.9}
+\contentsline {section}{\bfseries Netflix ja Silverlight}{10}{section*.10}
+\contentsline {section}{\bfseries Steam ja OpenGL ongelmat}{11}{section*.11}
+\contentsline {section}{\bfseries Lubuntu ongelmat}{12}{section*.12}
+\contentsline {section}{\bfseries Videoeditointi, ty\IeC {\"o}p\IeC {\"o}yt\IeC {\"a}jumi ja gif-konversio}{13}{section*.13}
+\contentsline {section}{\bfseries Teamviewer ja Steam ongelmat}{14}{section*.14}
+\contentsline {section}{\bfseries Tiedostojen jakaminen (samba) ja fstab}{15}{section*.15}
+\contentsline {section}{\bfseries GIF-tiedostoja toistava kuvaohjelma}{16}{section*.16}
+\contentsline {section}{\bfseries Oikeinkirjoituksen tarkistus}{17}{section*.17}
+\contentsline {section}{\bfseries \texttt {youtube-dl} ja vakioasetukset}{18}{section*.18}
+\contentsline {section}{\bfseries Python ja gdata-paketti}{19}{section*.19}
+\contentsline {section}{\bfseries MythGame ja mednafen}{20}{section*.20}
+\contentsline {section}{\bfseries \texttt {gzdoom}, Brutal doom ja OpenGL}{21}{section*.21}
+\contentsline {section}{\bfseries Aloituksen korjaus ja login-poisto}{22}{section*.22}
+\contentsline {section}{\bfseries GTK-Youtube-viewer}{23}{section*.23}
+\contentsline {section}{\bfseries GTK-Youtube-viewer}{24}{section*.24}

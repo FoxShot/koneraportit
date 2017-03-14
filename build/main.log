@@ -1,21 +1,22 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.1)  17 DEC 2016 07:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.1)  14 MAR 2017 18:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **\documentclass[a4paper, 12pt, twoside]{artikel3} \input{asetukset.tex} \usepa
-ckage{subfiles} \usepackage{hyperref} \newcommand{\ill}{\vfill} \begin{document
-} \setcounter{secnumdepth}{0} \tableofcontents\ill\pagebreak \subfile{20151021.
-tex}\ill\pagebreak\subfile{20151024.tex}\ill\pagebreak\subfile{20151026.tex}\il
-l\pagebreak\subfile{20151102.tex}\ill\pagebreak\subfile{20151107.tex}\ill\pageb
-reak\subfile{20151108.tex}\ill\pagebreak\subfile{20151115.tex}\ill\pagebreak\su
-bfile{20151120.tex}\ill\pagebreak\subfile{20151204.tex}\ill\pagebreak\subfile{2
-0151205.tex}\ill\pagebreak\subfile{20151206.tex}\ill\pagebreak\subfile{20151212
-.tex}\ill\pagebreak\subfile{20151219.tex}\ill\pagebreak\subfile{20160125.tex}\i
-ll\pagebreak\subfile{20160130.tex}\ill\pagebreak\subfile{20160131.tex}\ill\page
-break\subfile{20160326.tex}\ill\pagebreak\subfile{20160327.tex}\ill\pagebreak\s
-ubfile{20160406.tex}\ill\pagebreak\subfile{20160522.tex}\ill\pagebreak\subfile{
-20160924.tex}\ill\pagebreak\subfile{20160925.tex}\ill\pagebreak\subfile{2016121
-1.tex}\ill\pagebreak \end{document}
+ckage{subfiles} \usepackage[colorlinks=true]{hyperref} \newcommand{\ill}{\vfill
+} \begin{document} \setcounter{secnumdepth}{0} \tableofcontents\ill\pagebreak \
+subfile{20151021.tex}\ill\pagebreak\subfile{20151024.tex}\ill\pagebreak\subfile
+{20151026.tex}\ill\pagebreak\subfile{20151102.tex}\ill\pagebreak\subfile{201511
+07.tex}\ill\pagebreak\subfile{20151108.tex}\ill\pagebreak\subfile{20151115.tex}
+\ill\pagebreak\subfile{20151120.tex}\ill\pagebreak\subfile{20151204.tex}\ill\pa
+gebreak\subfile{20151205.tex}\ill\pagebreak\subfile{20151206.tex}\ill\pagebreak
+\subfile{20151212.tex}\ill\pagebreak\subfile{20151219.tex}\ill\pagebreak\subfil
+e{20160125.tex}\ill\pagebreak\subfile{20160130.tex}\ill\pagebreak\subfile{20160
+131.tex}\ill\pagebreak\subfile{20160326.tex}\ill\pagebreak\subfile{20160327.tex
+}\ill\pagebreak\subfile{20160406.tex}\ill\pagebreak\subfile{20160522.tex}\ill\p
+agebreak\subfile{20160924.tex}\ill\pagebreak\subfile{20160925.tex}\ill\pagebrea
+k\subfile{20161211.tex}\ill\pagebreak\subfile{20170210.tex}\ill\pagebreak\subfi
+le{20170314.tex}\ill\pagebreak \end{document}
 (/usr/share/texlive/texmf-dist/tex/latex/ntgclass/artikel3.cls
 Document Class: artikel3 2004/06/07 v2.1a NTG LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/ntgclass/ntg12.clo
@@ -540,6 +541,7 @@ Now handling font encoding PD1 ...
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
+Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
 Package hyperref Info: Hyper figures OFF on input line 4443.
 Package hyperref Info: Link nesting OFF on input line 4448.
 Package hyperref Info: Hyper index ON on input line 4451.
@@ -562,7 +564,7 @@ Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
 Package hyperref Info: backreferencing OFF on input line 6310.
-Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring ON on input line 6313.
 Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
@@ -654,7 +656,7 @@ LaTeX Font Info:    ... okay on input line 0.
 )
 \c@lstlisting=\count117
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 0.
+Package hyperref Info: Link coloring ON on input line 0.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -991,10 +993,26 @@ Package babel Info: Redefining finnish shorthand "|
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 0.
  [24]
+(./20170210.tex
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 12.
+)
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 0.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 0.
+ [25] (./20170314.tex
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 12.
+)
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 0.
+Package babel Info: Redefining finnish shorthand "|
+(babel)             in language  on input line 0.
+ [26]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 0.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 0.
-
-(./build/main.aux)
+ (./build/main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 0.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 0.
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -1002,13 +1020,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 0.
  
 Here is how much of TeX's memory you used:
- 8933 strings out of 494333
- 123642 string characters out of 6163939
- 262929 words of memory out of 5000000
- 11884 multiletter control sequences out of 15000+600000
+ 8996 strings out of 494333
+ 124390 string characters out of 6163939
+ 263943 words of memory out of 5000000
+ 11915 multiletter control sequences out of 15000+600000
  9669 words of font info for 35 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
- 42i,8n,40p,1470b,1324s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,8n,40p,1559b,1324s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texliv
@@ -1020,10 +1038,10 @@ blic/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb>
-Output written on ./build/main.pdf (24 pages, 184357 bytes).
+Output written on ./build/main.pdf (26 pages, 190546 bytes).
 PDF statistics:
- 495 PDF objects out of 1000 (max. 8388607)
- 453 compressed objects within 5 object streams
- 223 named destinations out of 1000 (max. 500000)
- 185 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 540 PDF objects out of 1000 (max. 8388607)
+ 496 compressed objects within 5 object streams
+ 249 named destinations out of 1000 (max. 500000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
 

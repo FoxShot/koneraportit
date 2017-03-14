@@ -39,7 +39,7 @@ mkdir frames
 ffmpeg -i <video> -r 5 'frames/frame-%03d.jpg'
 \end{lstlisting}
 
-missä 5 on fps eli kääntäen 20 ms delay convertointia varten. \texttt{ffmpeg} asenetaan repositorystä
+missä 5 on fps eli kääntäen 200 ms delay convertointia varten. \texttt{ffmpeg} asenetaan repositorystä
 
 \begin{lstlisting}
 sudo add-apt-repository ppa:mc3man/trusty-media
@@ -47,10 +47,18 @@ sudo apt-get update
 sudo apt-get install ffmpeg
 \end{lstlisting}
 
-gif muodostuu komennolla
+gif muodostuu komennolla (delay on arg*10 ms)
 
 \begin{lstlisting}
 convert -delay 20 -loop 0 ./frames/*.jpg animation.gif
+\end{lstlisting}
+
+{\Large{Edit:}}
+
+Pidemmillä videoilla \texttt{convert} antoi "memory allocation failure"-virheen, jolloin tuli muuttaa muistirajaa
+
+\begin{lstlisting}
+convert -limit memory 32MiB ...
 \end{lstlisting}
 
 \end{document}

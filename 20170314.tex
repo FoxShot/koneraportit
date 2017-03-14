@@ -1,0 +1,33 @@
+\documentclass[main.tex]{subfiles}
+
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: Lenovo X61\\
+Käyttis: Lubuntu 16.04
+\end{tabular}
+\hfill 14.3.2017
+
+\section{\texttt{pcgen} ja \texttt{javac}}
+
+Yritettiin compilerilla ajaa uusi \texttt{pcgen} versio, mutta saatiin vain virheitä. Compilerin versio oli liian uusi. Tämä tarkastettiin
+
+\begin{lstlisting}
+  javac -version
+\end{lstlisting}
+
+\texttt{javac 9-internal} oli vastaus. Piti vaihtaa versioksi 8. Etsittiin ensin javan kansio
+
+\begin{lstlisting}
+  whereis java
+  ls -l <polku>
+\end{lstlisting}
+
+Vaihdettiin polku
+
+\begin{lstlisting}
+  export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-i386"
+  export PATH=$JAVA_HOME/bin:$PATH
+\end{lstlisting}
+\end{document}

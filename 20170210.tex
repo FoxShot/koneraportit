@@ -1,0 +1,35 @@
+\documentclass[main.tex]{subfiles}
+
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: Lenovo X61\\
+Käyttis: Lubuntu 16.04
+\end{tabular}
+\hfill 10.2.2017
+
+\section{Python \texttt{youtube-dl} moduuli}
+
+Oli ongelmia saada moduuli toimimaan suoraan python-ohjelmasta. Kokeiltiin 
+
+\begin{lstlisting}
+  sudo pip install youtube-dl
+\end{lstlisting}
+
+mutta se asensi python version 2.5. Saatiin toimimaan lataamalla github versio ja ajamalla
+
+\begin{lstlisting}
+  sudo python3 setup.py install
+\end{lstlisting}
+
+kansiossa, mikä asensi python 3.5 version. Kun tämä saatiin toimimaan oli ongelma löytää key 'url' joka olisi pitänyt saada extract-info komennolla. Kuitenkin komento tuotti ensin listan laaduista ['formats'] mistä piti valita yksi ja sitten ['url']. Lopulta päätettiin etsiä yksi quality-id ja tulostaa sen url.
+
+\begin{lstlisting}
+  for laatu in formats:
+  	print(laatu['format'])
+  	if laatu['format_id'] == '43':
+  		print(laatu['url'])
+  		video = laatu['url']\end{lstlisting}
+
+\end{document}

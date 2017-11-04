@@ -1,0 +1,37 @@
+\documentclass[main.tex]{subfiles}
+
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: Lenovo X61\\
+Käyttis: lubuntu 16.04
+\end{tabular}
+\hfill 4.6.2017
+
+\section{Xserver ongelmat ja GTK3+}
+
+Ensin valitettiin
+
+\begin{lstlisting}
+  Gdk-WARNING **: gtk_nn_parse.py: Fatal IO error 11
+\end{lstlisting}
+
+Luotiin conf-tiedosto X11:sta
+
+\begin{lstlisting}
+  sudo mkdir /etc/X11/xorg.conf.d
+  sudo touch /etc/X11/xorg.conf.d/20-intel.conf
+  sudo gedit /etc/X11/xorg.conf.d/20-intel.conf
+\end{lstlisting}
+
+Sisään kirjoitettiin
+
+\begin{lstlisting}
+  Section "Device"
+   Identifier  "Intel Graphics"
+   Driver      "intel"
+   Option "NoAccel" "True"
+  EndSection
+\end{lstlisting}
+\end{document}

@@ -1,0 +1,37 @@
+\documentclass[main.tex]{subfiles}
+
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: extendedshadow\\
+Käyttis: Ubuntu 16.04
+\end{tabular}
+\hfill 7.9.2017
+
+\section{MySQL setuppi}
+
+Asennettiin MySQL workbench .deb-paketista ja \texttt{mysql} komentoriviltä
+
+\begin{lstlisting}
+  sudo apt-get install mysql
+  sudo mysql_secure_installation
+\end{lstlisting}
+
+Toiminta voidaan tarkistaa komennolla
+
+\begin{lstlisting}
+  system status mysql.service
+\end{lstlisting}
+
+Ohjelmaa ei kuitenkaan voitu käyttää root-käyttäjänä. Jotta saataisiin käyttökelpoinen database tuli luoda ensin sellainen ja sille käyttäjä oikeuksinee
+
+\begin{lstlisting}
+  sudo mysql
+  > CREATE DATABASE komponentit;
+  > USE komponentit;
+  > CREATE USER 'local'@'localhost' INDENTIFIED BY 'salasana';
+  > GRANT ALL PRIVILEGES ON komponentit.* to local@localhost;
+  > FLUSH PRIVILEGES;
+\end{lstlisting}
+\end{document}

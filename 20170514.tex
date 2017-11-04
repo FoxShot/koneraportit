@@ -1,0 +1,32 @@
+\documentclass[main.tex]{subfiles}
+
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: Sony\\
+Käyttis: 
+\end{tabular}
+\hfill 14.5.2017
+
+\section{eReader päivitys ja ongelmat}
+
+Ensin valitettiin
+
+\begin{lstlisting}
+  import gtk.glade no module named glade
+\end{lstlisting}
+
+sitten valitettiin
+
+\begin{lstlisting}
+  ImportError: No module named gtksourceview2
+\end{lstlisting}
+
+Asennettiin paketit
+
+\begin{lstlisting}
+  sudo apt-get install python-gtk2 python-glade2
+  sudo apt-get install python-gtksourceview2
+\end{lstlisting}
+\end{document}

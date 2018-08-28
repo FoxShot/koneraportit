@@ -1,0 +1,65 @@
+\documentclass[main.tex]{subfiles}
+
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: extendedshadow\\
+Käyttis: Ubuntu 16.04
+\end{tabular}
+\hfill 10.1.2018
+
+\section{32-bittinen \texttt{wine}, Steam ja Hearts of Iron III}
+\texttt{wine} ei päivittynyt Ubuntu repositystä oikeaan versioon, joten ensin poistettiin väärä versio ja asennettiin paketti virallisesta reposta.
+
+\begin{lstlisting}
+  sudo apt-get remove wine winetricks
+  sudo dpkg --add-architecture i386
+  wget -nc https://dl.winehq.org/wine-builds/Release.key
+  sudo apt-key add Release.key
+  sudo apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/
+  sudo apt-get update
+  sudo apt-get install --install-recommends winehq-stable
+  sudo apt-get install winetricks
+\end{lstlisting}
+
+Hearts of Ironia varten tulee mahdollisesti myös asentaa \texttt{.NET 2.0} ja \texttt{DirectX}, yms.
+
+\begin{lstlisting}
+  winetricks vcrun2005 directx9 dotnet20 quartz
+\end{lstlisting}
+
+32-bittistä emulaatiota varten tehtiin kansio ja ohjattiin se käyttämään 32-arkkitehtuuria (kansiota ei saa olla ennalta olemassa vaan \texttt{winecfg} luo sen).
+
+\begin{lstlisting}
+  WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
+\end{lstlisting}
+
+Vakio prefiksi voidaan asettaa komennolla
+
+\begin{lstlisting}
+  export WINEPREFIX=~/.wine32
+\end{lstlisting}
+
+muuten tulee käynnistää ohjelmat käyttäen komentoa
+
+\begin{lstlisting}
+  WINEPREFIX=~/.wine32 wine <ohjelma.exe>
+\end{lstlisting}
+
+Steamia käynnistäessä teksti ei näkynyt ollenkaan, mutta lisäämällä optio komentoon saatiin se näkymään
+
+\begin{lstlisting}
+  WINEPREFIX=~/.wine32 wine Steam.exe --no-dwrite
+\end{lstlisting}
+
+Hearts of Iron käynnistyi kummallisella resoluutiolla joten muokattiin sen \texttt{Settings.txt}-tiedostosta (löytyy pelin juurihakemistosta) kohta
+
+\begin{lstlisting}
+  size=
+  {
+    x=1680
+    y=1050
+  }
+\end{lstlisting}
+\end{document}

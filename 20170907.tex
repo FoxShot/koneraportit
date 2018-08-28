@@ -21,7 +21,7 @@ Asennettiin MySQL workbench .deb-paketista ja \texttt{mysql} komentoriviltä
 Toiminta voidaan tarkistaa komennolla
 
 \begin{lstlisting}
-  system status mysql.service
+  sudo service mysql status
 \end{lstlisting}
 
 Ohjelmaa ei kuitenkaan voitu käyttää root-käyttäjänä. Jotta saataisiin käyttökelpoinen database tuli luoda ensin sellainen ja sille käyttäjä oikeuksinee
@@ -30,8 +30,14 @@ Ohjelmaa ei kuitenkaan voitu käyttää root-käyttäjänä. Jotta saataisiin k�
   sudo mysql
   > CREATE DATABASE komponentit;
   > USE komponentit;
-  > CREATE USER 'local'@'localhost' INDENTIFIED BY 'salasana';
-  > GRANT ALL PRIVILEGES ON komponentit.* to local@localhost;
+  > CREATE USER 'user'@'host' INDENTIFIED BY 'salasana';
+  > GRANT ALL PRIVILEGES ON komponentit.* to user@host;
   > FLUSH PRIVILEGES;
+\end{lstlisting}
+
+Vakiona oleva salasanavaatimuksen taso on MEDIUM (1), mikä vaatii ison- ja pienenkirjaimen; numeron ja erikoismerkin. Salasanan on oltava vähintää 8 merkkiä. Salasanan voi vaihtaa komennolla
+
+\begin{lstlisting}
+  SET PASSWORD FOR 'user'@'host' = password('salasana')
 \end{lstlisting}
 \end{document}

@@ -1,0 +1,53 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tabular}[t]{l}
+Kone: shadowtv\\
+Käyttis: Debian 9.4 LXDE
+\end{tabular}
+\hfill 30.8.2018
+
+\section{\texttt{iwlwifi} ja WiFi-vaikeudet}
+Resurssilistaan \texttt{/etc/apt/sources.list} tuli lisätä rivi
+\begin{lstlisting}
+  deb http://httpredir.debian.org/debian/ stretch main contrib non-free
+\end{lstlisting}
+
+Pakettirepo päivitettiin ja asennettiin firmware-paketti
+\begin{lstlisting}
+  apt-get update && apt-get install firmware-iwlwifi
+\end{lstlisting}
+
+Moduuli uudelleen lisättiin
+\begin{lstlisting}
+  modprobe -r iwlwifi ; modprobe iwlwifi
+\end{lstlisting}
+
+LXDE:n mukana tullut \texttt{wicd} on kuitenkin riittämätön ohjatakseen WiFiä tai muuta. Tuli asentaa \texttt{conmann} ja käyttää sitä
+\begin{lstlisting}
+$ sudo apt-get install connman
+
+$  /usr/sbin/connmanctl 
+connmanctl> enable wifi
+connmanctl> scan wifi 
+Scan completed for wifi
+
+connmanctl> services 
+$SSID    wifi_f8d111090ed6_6d617269636f6e5f64655f6d6965726461_managed_psk
+...      ...
+
+connmanctl> agent on
+Agent registered
+
+connmanctl> connect wifi_f8d111090ed6_6d617269636f6e5f64655f6d6965726461_managed_psk 
+Agent RequestInput wifi_f8d111090ed6_6d617269636f6e5f64655f6d6965726461_managed_psk
+Passphrase = [ Type=psk, Requirement=mandatory, Alternates=[ WPS ] ]
+WPS = [ Type=wpspin, Requirement=alternate ]
+Passphrase? $PASS
+Connected wifi_f8d111090ed6_6d617269636f6e5f64655f6d6965726461_managed_psk
+
+connmanctl> quit
+\end{lstlisting}
+
+\end{document}
